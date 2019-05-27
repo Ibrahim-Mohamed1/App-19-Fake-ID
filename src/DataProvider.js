@@ -17,11 +17,12 @@ class DataProvider extends Component {
         id: res.data,
         birthday: res.data.birthday
       })
-    })
+    }).catch(function (error) {
+      window.location.reload()
+    });
   }
-  
+
   render() {
-    console.log(this.state.birthday)
     return (
       <Provider value={{
         getId: this.getId,
